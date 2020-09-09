@@ -20,8 +20,8 @@ def main():
         thread.daemon = True
         thread.start()
 
-    
     start = time.time()
+
     # put all ports into a queue, the when a thread is ready, it will grab a new port from the queue and perform the scan
     for port in range(1, 1024):
         q.put(port)
@@ -62,6 +62,7 @@ def scan(port):
         
         # close the socket connection 
         s.close()
+    
     except:
         print("error scanning port:", port)
 
