@@ -1,3 +1,8 @@
+# Travis Smith
+# ITMS 543 Vulnerability Analysis and Control
+# Fall 2020
+# Concurrent TCP port scanner
+
 from socket import *
 from queue import Queue
 import threading
@@ -50,7 +55,7 @@ def threadManager():
 def scan(port):
     
     try:
-        # create socket object and attempt connection
+        # create socket object and attempt TCP connection (SOCK_STREAM)
         s = socket(AF_INET, SOCK_STREAM)
         s.settimeout(0.5)
         result = s.connect_ex((ip, port))
